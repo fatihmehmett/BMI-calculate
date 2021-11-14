@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route} from "react-router-dom";
+import Bmidiyet from "./components/Bmidiyet";
+import Bmihesap from "./components/Bmihesap";
+import AnaContextProvider from "./context/Anacontext";
+import './Appsass.scss';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <AnaContextProvider>
+      <Routes>
+          <Route path="/" element={<Bmihesap />} />
+          <Route path="diyet" element={<Bmidiyet />} />
+      </Routes>
+    </AnaContextProvider>
     </div>
   );
 }
